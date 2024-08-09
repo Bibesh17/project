@@ -5,34 +5,47 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 3, 17, 51),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 3, 17, 51),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Transform.rotate(
-                    angle: -0.3,
-                    child: Container(
-                      height: 200,
-                      width: 200,
-                      color: Colors.yellow,
+              SizedBox(
+                height: screenHeight / 3,
+                child: Stack(
+                  children: [
+                    Flexible(
+                      child: ClipPath(
+                        clipper: _Triangle(),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                            maxHeight: 400,
+                            maxWidth: 400,
+                            minHeight: 250,
+                            minWidth: 250,
+                          ),
+                          color: Colors.yellow,
+                        ),
+                      ),
                     ),
-                  ),
-                  const Text(
-                    'FINANCE GURU',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                    const Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'FINANCE\nGURU',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(height: 40),
               const TextField(
@@ -72,7 +85,7 @@ class LoginPage extends StatelessWidget {
                     // Add your forget password logic here
                   },
                   child: const Text(
-                    'Forget password?',
+                    'Forgot password?',
                     style: TextStyle(color: Color.fromARGB(255, 51, 135, 245)),
                   ),
                 ),
@@ -110,7 +123,24 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-void main() => runApp(const MaterialApp(
-      home: LoginPage(),
-    ));
-  //for comit
+void main() => runApp(
+      const MaterialApp(
+        home: LoginPage(),
+      ),
+    );
+
+class _Triangle extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.lineTo(0, 0);
+    path.lineTo(0, size.height);
+    path.lineTo(size.width/2, size.height / 2);
+    path.lineTo(0, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
+}
