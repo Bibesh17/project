@@ -18,7 +18,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     Container(
                       height: 50,
-                      width: 50, // Constrain the width to a fixed value
+                      width: 50,
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: Colors.yellow),
                       child: const Icon(CupertinoIcons.person_fill, size: 24),
@@ -85,92 +85,71 @@ class MainScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 40),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Container(
-                        height: 50,
-                        width: 110,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            color: Colors.lightBlueAccent),
-                        child: Row(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
                           children: [
                             Container(
                               height: 20,
                               width: 20,
                               decoration: const BoxDecoration(
-                                  color: Color.fromARGB(255, 39, 159, 196),
-                                  shape: BoxShape.circle),
+                                color: Color.fromARGB(255, 39, 159, 196),
+                                shape: BoxShape.circle,
+                              ),
                               child:
                                   const Icon(CupertinoIcons.arrow_down_circle),
                             ),
-                            const SizedBox(width: 10),
-                            const Column(
-                              children: [
-                                Text(
-                                  'Income',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Text(
-                                  "Rs. 45000",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                              ],
+                            const SizedBox(height: 10),
+                            const Text(
+                              'Income',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const Text(
+                              "Rs. 45000",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Container(
-                        height: 50,
-                        width: 110,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            color: Colors.lightBlueAccent),
-                        child: Row(
+                        Column(
                           children: [
                             Container(
                               height: 20,
                               width: 20,
                               decoration: const BoxDecoration(
-                                  color: Color.fromARGB(255, 39, 159, 196),
-                                  shape: BoxShape.circle),
-                              child:
-                                  const Icon(CupertinoIcons.arrow_down_circle),
+                                color: Color.fromARGB(255, 111, 173, 197),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(CupertinoIcons.arrow_up_circle),
                             ),
-                            const Column(
-                              children: [
-                                Text(
-                                  'Spending',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Text(
-                                  "Rs. 45000",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                              ],
+                            const SizedBox(height: 10),
+                            const Text(
+                              'Expense',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const Text(
+                              "Rs. 30000",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
