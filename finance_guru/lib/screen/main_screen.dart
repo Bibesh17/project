@@ -148,7 +148,6 @@ class MainScreen extends StatelessWidget {
                               child:
                                   const Icon(CupertinoIcons.arrow_down_circle),
                             ),
-                            const SizedBox(width: 10),
                             const Column(
                               children: [
                                 Text(
