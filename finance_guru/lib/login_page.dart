@@ -1,3 +1,4 @@
+import 'package:finance_guru/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -93,7 +94,9 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Add your login logic here
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const HomeScreen();
+                  }));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
@@ -135,7 +138,7 @@ class _Triangle extends CustomClipper<Path> {
     final path = Path();
     path.lineTo(0, 0);
     path.lineTo(0, size.height);
-    path.lineTo(size.width/2, size.height / 2);
+    path.lineTo(size.width / 2, size.height / 2);
     path.lineTo(0, 0);
     path.close();
     return path;
