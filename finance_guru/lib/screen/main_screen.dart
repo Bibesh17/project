@@ -30,24 +30,22 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(width: 8),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Good morning!",
                         style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
-                          color: Theme.of(context).colorScheme.outline,
-                        ),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.black87),
                       ),
                       Text(
                         "Roman",
                         style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.outline,
-                        ),
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black87),
                       ),
                     ],
                   ),

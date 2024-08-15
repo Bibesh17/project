@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 3, 17, 51),
+        backgroundColor: const Color(0xFF2F7694),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
