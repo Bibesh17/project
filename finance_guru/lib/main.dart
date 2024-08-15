@@ -11,10 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: " Expense_app",
+      title: " Finance Guru",
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(
-            255, 60, 129, 158), // Set the global background color
+        scaffoldBackgroundColor: const Color(0xFF4093CE),
       ),
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),
