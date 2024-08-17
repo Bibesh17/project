@@ -5,7 +5,11 @@ class MonthlyReport extends StatelessWidget {
   final String transactionType;
   final String amount;
 
-  const MonthlyReport({super.key, required this.icon, required this.transactionType, required this.amount});
+  const MonthlyReport(
+      {super.key,
+      required this.icon,
+      required this.transactionType,
+      required this.amount});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +17,9 @@ class MonthlyReport extends StatelessWidget {
       width: 150,
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 39, 159, 196),
-        // color: Colors.pink,
-        borderRadius: BorderRadius.circular(30.0)
-      ),
+          color: const Color.fromARGB(255, 39, 159, 196),
+          // color: Colors.pink,
+          borderRadius: BorderRadius.circular(30.0)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

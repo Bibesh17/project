@@ -15,16 +15,20 @@ class HomeScreen extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.home), label: 'Home'),
           BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.doc_text_search), label: 'Analysis'),
+          BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.doc_on_doc), label: 'transaction'),
         ],
       ),
       //floating action buttom
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      /*  floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterDocked,
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         shape: const CircleBorder(),
         child: const Icon(CupertinoIcons.doc_text_search),
-      ),
+      ),*/
 
       body: const MainScreen(),
     );
