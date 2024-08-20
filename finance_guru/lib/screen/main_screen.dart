@@ -2,19 +2,13 @@ import 'package:finance_guru/widgets/monthly_report.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:finance_guru/data/data.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Map<String, double> dataMap = {
-      "Tuition fee": 15000,
-      "Transportation": 7000,
-      "Entertainment": 2000,
-      "Foods": 20000,
-      "Others": 5000,
-    };
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -111,20 +105,22 @@ class MainScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 20),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        MonthlyReport(
-                          icon: CupertinoIcons.arrow_up_circle,
-                          transactionType: 'Income',
-                          amount: '45000',
-                        ),
-                        MonthlyReport(
-                          icon: CupertinoIcons.arrow_down_circle,
-                          transactionType: 'Expense',
-                          amount: '4500',
-                        ),
-                      ],
+                    const Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          MonthlyReport(
+                            icon: CupertinoIcons.arrow_up_circle,
+                            transactionType: 'Income',
+                            amount: '45000',
+                          ),
+                          MonthlyReport(
+                            icon: CupertinoIcons.arrow_down_circle,
+                            transactionType: 'Expense',
+                            amount: '4500',
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 15),
                     const MonthlyReport(
@@ -151,63 +147,65 @@ class MainScreen extends StatelessWidget {
                 child: SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(9.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              "Categories",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white70,
-                                  fontSize: 20),
-                            ),
-                            Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.more_vert_outlined),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: PieChart(
-                            dataMap: dataMap,
-                            animationDuration:
-                                const Duration(milliseconds: 1200),
-                            chartLegendSpacing: 35,
-                            chartRadius:
-                                MediaQuery.of(context).size.width / 3.5,
-                            initialAngleInDegree: 0,
-                            chartType: ChartType.ring,
-                            ringStrokeWidth: 15,
-                            legendOptions: const LegendOptions(
-                              showLegendsInRow: false,
-                              legendPosition: LegendPosition.right,
-                              showLegends: true,
-                              legendShape: BoxShape.circle,
-                              legendTextStyle: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 10,
-                                  color: Colors.black87),
-                            ),
-                            chartValuesOptions: const ChartValuesOptions(
-                              showChartValueBackground: false,
-                              showChartValues: false,
-                              showChartValuesInPercentage: false,
-                              showChartValuesOutside: false,
-                              decimalPlaces: 1,
-                            ),
+                    child: Expanded(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Categories",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white70,
+                                    fontSize: 20),
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.more_vert_outlined),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
-                        )
-                      ],
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: PieChart(
+                              dataMap: dataMap,
+                              animationDuration:
+                                  const Duration(milliseconds: 1200),
+                              chartLegendSpacing: 35,
+                              chartRadius:
+                                  MediaQuery.of(context).size.width / 1.7,
+                              initialAngleInDegree: 0,
+                              chartType: ChartType.ring,
+                              ringStrokeWidth: 15,
+                              legendOptions: const LegendOptions(
+                                showLegendsInRow: false,
+                                legendPosition: LegendPosition.right,
+                                showLegends: true,
+                                legendShape: BoxShape.circle,
+                                legendTextStyle: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 10,
+                                    color: Colors.black87),
+                              ),
+                              chartValuesOptions: const ChartValuesOptions(
+                                showChartValueBackground: false,
+                                showChartValues: false,
+                                showChartValuesInPercentage: false,
+                                showChartValuesOutside: false,
+                                decimalPlaces: 1,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
