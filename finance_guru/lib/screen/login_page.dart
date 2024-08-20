@@ -74,37 +74,42 @@ class _LoginPageState extends State<LoginPage> {
                       top: 50, left: 8.0, right: 8.0, bottom: 8.0),
                   child: Column(
                     children: [
-                      const TextField(
-                        style: TextStyle(color: Colors.white),
+                      TextField(
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           labelText: 'Username',
-                          labelStyle: TextStyle(
-                              color: Color.fromARGB(255, 247, 244, 244)),
+                          labelStyle: const TextStyle(
+                            color: Color.fromARGB(255, 247, 244, 244),
+                          ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(color: Colors.white),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(
                               color: Color.fromRGBO(255, 255, 255, 1),
                             ),
                           ),
                         ),
                       ),
 
-                      // username and pass
+                      // pass
 
                       const SizedBox(height: 20),
-                      const TextField(
+                      TextField(
                         obscureText: true,
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           labelText: 'Password',
-                          labelStyle: TextStyle(color: Colors.white),
+                          labelStyle: const TextStyle(color: Colors.white),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(color: Colors.white),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(color: Colors.blue),
                           ),
                         ),
                       ),
