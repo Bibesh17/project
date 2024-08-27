@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: " Finance Guru",
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF4093CE),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 167, 232, 240),
       ),
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),

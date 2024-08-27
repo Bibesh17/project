@@ -19,42 +19,45 @@ class MainScreen extends StatelessWidget {
               //person icon, good morning and notification
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    //person icon
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.yellow,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Row(
+                    children: [
+                      //person icon
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.yellow,
+                        ),
+                        child: const Icon(CupertinoIcons.person_fill, size: 24),
                       ),
-                      child: const Icon(CupertinoIcons.person_fill, size: 24),
-                    ),
-                    const SizedBox(width: 8),
-                    //good morning text
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Good morning!",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black87,
+                      const SizedBox(width: 8),
+                      //good morning text
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Good morning!",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.black87,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Roman",
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black87,
+                          Text(
+                            "Roman",
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 //notification icon
                 IconButton(
@@ -71,7 +74,7 @@ class MainScreen extends StatelessWidget {
               height: 220,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xFF32ADE6),
+                color: const Color.fromARGB(255, 91, 193, 233),
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Padding(
@@ -141,7 +144,7 @@ class MainScreen extends StatelessWidget {
                 height: 350,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF32ADE6),
+                  color: const Color.fromARGB(255, 91, 193, 233),
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: SafeArea(

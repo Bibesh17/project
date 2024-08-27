@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:finance_guru/data/data.dart';
 
-class AnalysisPage extends StatelessWidget {
+class AnalysisPage extends StatefulWidget {
   const AnalysisPage({super.key});
 
   @override
+  State<AnalysisPage> createState() => _AnalysisPageState();
+}
+
+class _AnalysisPageState extends State<AnalysisPage> {
+  List<bool> isSelected = [true, false];
+  @override
   Widget build(BuildContext context) {
-    return Center(
+    return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -18,8 +24,36 @@ class AnalysisPage extends StatelessWidget {
               height: 70,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xFF32ADE6),
+                color: const Color.fromARGB(255, 91, 193, 233),
                 borderRadius: BorderRadius.circular(16),
+              ),
+              child: Center(
+                child: ToggleButtons(
+                  borderColor: Colors.white,
+                  fillColor: const Color.fromARGB(255, 14, 86, 119),
+                  borderWidth: 2,
+                  selectedBorderColor: Colors.white,
+                  selectedColor: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  onPressed: (int index) {
+                    setState(() {
+                      for (int i = 0; i < isSelected.length; i++) {
+                        isSelected[i] = i == index;
+                      }
+                    });
+                  },
+                  isSelected: isSelected,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.0),
+                      child: Text("Week"),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.0),
+                      child: Text("Months"),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -28,13 +62,61 @@ class AnalysisPage extends StatelessWidget {
             // Expenses and income container (middle )
 
             Container(
-              height: 200,
+              height: 180,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xFF32ADE6),
+                color: const Color.fromARGB(255, 91, 193, 233),
                 borderRadius: BorderRadius.circular(16),
               ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_left),
+                        ),
+                        const Text(
+                          "Shrawan 2081",
+                          style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_right_outlined),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          "Expenses ",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "Income ",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ),
+
             const SizedBox(
               height: 10,
             ),
@@ -45,7 +127,7 @@ class AnalysisPage extends StatelessWidget {
                 height: 370,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF32ADE6),
+                  color: const Color.fromARGB(255, 91, 193, 233),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Align(
